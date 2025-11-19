@@ -1,0 +1,178 @@
+# ============================================
+# EJERCICIO 1 — Variables y entrada de datos
+# ============================================
+def ejercicio1():
+    print("\n--- Ejercicio 1: Datos del usuario ---")
+    nombre = input("Ingresa tu nombre: ")
+    edad = input("Ingresa tu edad: ")
+    carrera = input("Ingresa tu carrera: ")
+
+    print(f"\nHola {nombre}, estudias {carrera} y tienes {edad} años.")
+
+
+# ============================================
+# EJERCICIO 2 — Condicionales
+# ============================================
+def ejercicio2():
+    print("\n--- Ejercicio 2: Evaluar número ---")
+    try:
+        num = float(input("Ingresa un número: "))
+    except ValueError:
+        print("Entrada inválida. Debes ingresar un número.")
+        return
+
+    # Positivo, negativo o cero
+    if num > 0:
+        print("El número es POSITIVO.")
+    elif num < 0:
+        print("El número es NEGATIVO.")
+    else:
+        print("El número es CERO.")
+
+    # Par o impar (solo si es entero)
+    if num.is_integer():
+        if int(num) % 2 == 0:
+            print("El número es PAR.")
+        else:
+            print("El número es IMPAR.")
+    else:
+        print("El número no es entero, no se puede determinar si es par o impar.")
+
+
+# ============================================
+# EJERCICIO 3 — Ciclos y acumuladores
+# ============================================
+def ejercicio3():
+    print("\n--- Ejercicio 3: Suma y Promedio ---")
+    try:
+        n = int(input("¿Cuántos números vas a ingresar?: "))
+    except ValueError:
+        print("Entrada inválida. Debes ingresar un número entero.")
+        return
+
+    suma = 0
+    for i in range(n):
+        while True:
+            try:
+                num = float(input(f"Número {i+1}: "))
+                break
+            except ValueError:
+                print("Entrada inválida. Intenta de nuevo.")
+        suma += num
+
+    promedio = suma / n if n > 0 else 0
+
+    print(f"\nCantidad ingresada: {n}")
+    print(f"Suma total: {suma}")
+    print(f"Promedio: {promedio}")
+
+
+# ============================================
+# EJERCICIO 4 — Listas
+# ============================================
+def ejercicio4():
+    print("\n--- Ejercicio 4: Lista de estudiantes ---")
+    lista = []
+
+    for i in range(5):
+        nombre = input(f"Ingresa el nombre {i+1}: ")
+        lista.append(nombre)
+
+    print("\nLista original:", lista)
+    print("Primer elemento:", lista[0])
+    print("Último elemento:", lista[-1])
+    print("Lista ordenada:", sorted(lista))
+
+
+# ============================================
+# EJERCICIO 5 — Funciones
+# ============================================
+def area_rectangulo(base, altura):
+    return base * altura
+
+def ejercicio5():
+    print("\n--- Ejercicio 5: Área de un rectángulo ---")
+    try:
+        base = float(input("Ingresa la base: "))
+        altura = float(input("Ingresa la altura: "))
+    except ValueError:
+        print("Entrada inválida.")
+        return
+
+    area = area_rectangulo(base, altura)
+    print(f"El área del rectángulo es: {area}")
+
+
+# ============================================
+# EJERCICIO 6 — Diccionarios
+# ============================================
+def ejercicio6():
+    print("\n--- Ejercicio 6: Información del alumno ---")
+
+    alumno = {
+        "nombre": input("Nombre del alumno: "),
+        "matricula": input("Matrícula: "),
+        "carrera": input("Carrera: "),
+    }
+
+    try:
+        alumno["promedio"] = float(input("Promedio: "))
+    except ValueError:
+        print("Promedio inválido.")
+        return
+
+    print(f"\nAlumno: {alumno['nombre']} ({alumno['matricula']})")
+    print(f"Carrera: {alumno['carrera']}")
+    print(f"Promedio: {alumno['promedio']}")
+
+    if alumno["promedio"] >= 7:
+        print("Estado: Aprobado")
+    else:
+        print("Estado: Reprobado")
+
+
+# ============================================
+# EJERCICIO 7 — MENÚ PRINCIPAL
+# ============================================
+def menu():
+    while True:
+        print("\n===== MENÚ PRINCIPAL =====")
+        print("1. Datos del usuario")
+        print("2. Evaluar número")
+        print("3. Suma y promedio")
+        print("4. Lista de estudiantes")
+        print("5. Área de rectángulo")
+        print("6. Información del alumno")
+        print("7. Mostrar todos los datos (EJECUTAR TODOS)")
+        print("0. Salir")
+
+        opcion = input("Elige una opción: ")
+
+        if opcion == "1":
+            ejercicio1()
+        elif opcion == "2":
+            ejercicio2()
+        elif opcion == "3":
+            ejercicio3()
+        elif opcion == "4":
+            ejercicio4()
+        elif opcion == "5":
+            ejercicio5()
+        elif opcion == "6":
+            ejercicio6()
+        elif opcion == "7":
+            ejercicio1()
+            ejercicio2()
+            ejercicio3()
+            ejercicio4()
+            ejercicio5()
+            ejercicio6()
+        elif opcion == "0":
+            print("Programa finalizado.")
+            break
+        else:
+            print("Opción inválida. Intenta nuevamente.")
+
+
+# EJECUCIÓN PRINCIPAL
+menu()
