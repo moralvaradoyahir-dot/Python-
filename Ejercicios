@@ -18,10 +18,6 @@ else:
     print("El número es impar.")
 
 
-
-
-
-
 # Ejercicio 3 — Ciclos y acumuladores
 
 # Pedimos la cantidad de números
@@ -43,9 +39,6 @@ print("Suma total:", suma)
 print("Promedio:", promedio)
 
 
-
-
-
 # Ejercicio 4 — Listas
 
 # Capturar 5 nombres
@@ -65,9 +58,6 @@ lista_ordenada = sorted(nombres)
 print("Lista ordenada:", lista_ordenada)
 
 
-
-
-
 # Ejercicio 5 — Funciones
 
 # Definición de la función
@@ -84,9 +74,6 @@ resultado = area_rectangulo(base, altura)
 
 # Mostrar el resultado
 print(f"El área del rectángulo es: {resultado}")
-
-
-
 
 
 # Ejercicio 6 — Diccionarios
@@ -115,12 +102,9 @@ print(f"Promedio: {alumno['promedio']}")
 print(f"Estado: {estado}")
 
 
-
-
-
-# =============================================
-#  Ejercicio 7 — Menú Interactivo (40 pts)
-# =============================================
+# --------------------------------------------
+#  Ejercicio 7 — Menú Interactivo 
+# ---------------------------------------------
 
 # Variables globales para almacenar los datos de cada ejercicio
 datos_usuario = {}
